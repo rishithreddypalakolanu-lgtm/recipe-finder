@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recipe Finder - Search recipes and save your favourites.">
+  <title>Recipe Finder — Search & Favourites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html" aria-label="Recipe Finder home">
+        <span class="brand-icon">🍳</span>
+        <span>Recipe<span>Finder</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-link active" id="homeBtn" type="button">Discover</button>
+        <button class="nav-link" id="allFoodsBtn" type="button">🍽 All Foods</button>
+        <button class="nav-link" id="sweetsBtn" type="button">🍰 Sweets</button>
+        <button class="nav-link" id="favouritesBtn" type="button">♥ Favourites <span class="count-badge" id="favouriteCount">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR EVERYDAY RECIPE COMPANION</p>
+          <h1>Cook something<br><em>delicious.</em></h1>
+          <p class="hero-text">Search thousands of recipes by name or ingredient and save the ones you love.</p>
+          <form class="search-box" id="searchForm">
+            <span aria-hidden="true">🔎</span>
+            <input id="searchInput" type="search" placeholder="Try “pasta”, “chicken”, “paneer”..." autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
+          <div class="quick-searches">
+            <span>Popular:</span>
+            <button type="button" data-query="chicken">Chicken</button>
+            <button type="button" data-query="pasta">Pasta</button>
+            <button type="button" data-query="cake">Cake</button>
+            <button type="button" data-query="paneer">Paneer</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="plate">🍲</div>
+          <div class="floating-card card-one">🥗 Fresh & healthy</div>
+          <div class="floating-card card-two">❤️ Loved recipes</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container content-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" id="sectionEyebrow">EXPLORE RECIPES</p>
+          <div id="categoryBar" class="category-bar" aria-label="Explore food categories"></div>
+          <h2 id="sectionTitle">Popular recipes</h2>
+        </div>
+        <span id="resultInfo" class="result-info"></span>
+      </div>
+      <div id="status" class="status" hidden></div>
+      <div id="recipeGrid" class="recipe-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <article class="recipe-modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close recipe details">×</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Recipe Finder</span>
+      <span>Powered by TheMealDB</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
